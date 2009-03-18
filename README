@@ -7,6 +7,10 @@ These plugin make the use of Jamal easy for a Rails developer.
 
 It includes the last version of jamal MVC, and the last stable version of jquery. (Today is 18 March 09)
 
+Installation
+============
+
+  ./script/plugin install git://github.com/guillermo/jamal_rails_plugin/
 
 Example
 =======
@@ -28,7 +32,7 @@ And add a simple view helper to regenerate assets in development and include
 
 That will include: jquery, jamal and your client app code.
 
-  
+
 Links
 =====
 
