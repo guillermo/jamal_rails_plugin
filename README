@@ -1,0 +1,38 @@
+JamalMVC
+========
+
+Jamal is a jQuery MVC Framework.
+
+These plugin make the use of Jamal easy for a Rails developer.
+
+It includes the last version of jamal MVC, and the last stable version of jquery. (Today is 18 March 09)
+
+
+Example
+=======
+
+These plugin adds two basic rake task:
+
+  rake jamal:install
+      Install Jamal and JQuery.
+        Create a RAILS_ROOT/client folder to start coding your client app.
+        Copy all assets to public/javascript and public/stylesheets.
+
+  rake jamal:update_assets
+      Update assets app.
+        Compile all code under RAILS_ROOT/client to public/javascripts/client.app.js
+
+And add a simple view helper to regenerate assets in development and include
+
+  include_client_app  
+
+That will include: jquery, jamal and your client app code.
+
+  
+Links
+=====
+
+Jamal Project: http://jamal-mvc.com
+These plugin repo: http://github.com/guillermo/jamal_rails_plugin
+
+Copyright (c) 2009 Guillermo Álvarez, released under the MIT license
