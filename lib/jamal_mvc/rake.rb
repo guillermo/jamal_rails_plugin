@@ -33,10 +33,10 @@ module JamalMVC
       
       concat_files(JS_ASSETS+'/jamal.js',jamal_files.flatten)
       
-      app_files = Dir.glob(CLIENT_APP+'/*.js')
-      app_files = Dir.glob(CLIENT_APP+'/models/*.js')
-      app_files = Dir.glob(CLIENT_APP+'/views/*.js')
-      app_files = Dir.glob(CLIENT_APP+'/controllers/*.js')
+      app_files = [Dir.glob(CLIENT_APP+'/*.js')]
+      app_files << Dir.glob(CLIENT_APP+'/models/*.js')
+      app_files << Dir.glob(CLIENT_APP+'/views/*.js')
+      app_files << Dir.glob(CLIENT_APP+'/controllers/*.js')
       concat_files(JS_ASSETS+'/client.app.js', app_files.flatten)
       
       #TODO: Generate file for jQuery: client/vendor/jquery/*.js (jquery, jquery-u, jquery plugins, ..) => jquery.all.js
