@@ -244,7 +244,49 @@ jamal.fn.extend(jamal.fn.m.prototype, {
             return false;
         }
         return response;
+    },
+    
+    find: function(id,func){
+      $.ajax({
+        success: func,
+        dataType: 'json',
+        url: '/'+this.name.pluralize().toLowerCase()+'/'+id
+      })
+    },
+    find_all: function(func){
+      $.ajax({
+        success: func,
+        dataType: 'json',
+        url: '/'+this.name.pluralize().toLowerCase()
+      })
+    },
+    initialize: function(func){
+      $.ajax({
+        success: func,
+        dataType: 'json',
+        url: '/'+this.name.pluralize().toLowerCase()+'/new'
+      })
+    },
+    update: function(model,func){
+      // TODO: Update to pass security filters InvalidAuthenticityToken
+      $.ajax({
+        type: 'POST',
+        success: func,
+        dataType: 'json',
+        data: model,
+        url: '/'+this.name.pluralize().toLowerCase()+'/'+model["id"]+'?_method=put'
+      })
+    },
+    find_first: function(conditions,func){
+      $.ajax({
+        type: 'POST',
+        success: func,
+        dataType: 'json',
+        data: model,
+        url: '/'+this.name.pluralize().toLowerCase()+'/'+model["id"]+'?_method=put'
+      })          
     }
+    
 });
 
 /**
